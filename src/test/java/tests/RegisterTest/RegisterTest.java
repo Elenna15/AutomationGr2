@@ -12,6 +12,9 @@ public class RegisterTest extends BaseTest {
     private String newUrl = getBaseUrl() + "Register.html";
     String firstName = "Ion";
     String lastName = "Popescu";
+    String address = "Str Lotus, Nr 35";
+    String email = "automation@email.com";
+    String phone = "0745267287";
 
     @Test
     public void fillRegister() {
@@ -23,6 +26,15 @@ public class RegisterTest extends BaseTest {
 
         LOG.info("Typing full name");
         registerPage.insertFullName(firstName, lastName);
+
+        LOG.info("Type address");
+        registerPage.insertAddress(address);
+
+        LOG.info("Type Email");
+        registerPage.insertEmail(email);
+
+        LOG.info("Type Phone number");
+        registerPage.insertPhone(phone);
 
 
     }
