@@ -15,6 +15,13 @@ public class RegisterTest extends BaseTest {
     String address = "Str Lotus, Nr 35";
     String email = "automation@email.com";
     String phone = "0745267287";
+    String language = "English";
+    String skill = "Java";
+    String country = "India";
+    String year = "1991";
+    String month = "February";
+    String day = "29";
+
 
     @Test
     public void fillRegister() {
@@ -35,6 +42,30 @@ public class RegisterTest extends BaseTest {
 
         LOG.info("Type Phone number");
         registerPage.insertPhone(phone);
+
+        LOG.info("Select gender");
+        registerPage.setMaleGender();
+        registerPage.setFemaleGender();
+
+        LOG.info("Select hobbies");
+        registerPage.clickCricket();
+        registerPage.clickMovies();
+        registerPage.clickHockey();
+
+        LOG.info("Select language");
+        registerPage.selectLanguage(language);
+
+        LOG.info("Select skill");
+        registerPage.selectSkills(skill);
+
+        LOG.info("Select country");
+        registerPage.selectCountry(country);
+
+        LOG.info("Select date of birth");
+        registerPage.setDateOfBirth(year, month, day);
+
+        sleep(5000L);
+
 
 
     }
