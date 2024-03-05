@@ -24,13 +24,14 @@ public class RegisterTest extends BaseTest {
     String password = "Parola234";
 
 
+
     @Test
     public void fillRegister() {
         driver.get(newUrl);
         sleep(3000L);
 
-        LOG.info("Click the Consent button");
-        registerPage.clickConsent();
+        //LOG.info("Click the Consent button");
+        //registerPage.clickConsent();
 
         LOG.info("Typing full name");
         registerPage.insertFullName(firstName, lastName);
@@ -71,11 +72,14 @@ public class RegisterTest extends BaseTest {
         LOG.info("Type password");
         registerPage.insertConfirm(password);
 
+        LOG.info("Click 'Choose File' button");
+        registerPage.chooseFile();
+
+
+
 
 
         sleep(5000L);
-
-
 
     }
 }

@@ -2,6 +2,7 @@ package pages.RegisterPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,6 +46,7 @@ public class RegisterPage extends BasePage {
     private By confirmPassword = By.id("secondpassword");
     private By submitButton = By.id("submitbtn");
     private By refreshButton = By.id("Button1");
+    private By chooseFileButton = By.id("imagesrc");
 
 
     public void insertFullName(String fName, String lName) {
@@ -53,10 +55,10 @@ public class RegisterPage extends BasePage {
         driver.findElement(inputLastName).sendKeys(lName);
     }
 
-    public void clickConsent() {
-        LOG.info("Click the Consent button");
-        driver.findElement(consent).click();
-    }
+    //public void clickConsent() {
+       // LOG.info("Click the Consent button");
+       // driver.findElement(consent).click();
+    //}
 
     public void insertAddress(String address) {
         LOG.info("Insert Address");
@@ -137,5 +139,14 @@ public class RegisterPage extends BasePage {
         LOG.info("Insert password");
         driver.findElement(confirmPassword).sendKeys(password);
     }
+
+    public void chooseFile(){
+        LOG.info("Uploading file");
+        WebElement chooseFile = driver.findElement(chooseFileButton);
+        chooseFile.sendKeys("C:\\Users\\Elena\\Pictures\\Saved Pictures//logo.jpg");
+    }
+
+
+
 
 }
