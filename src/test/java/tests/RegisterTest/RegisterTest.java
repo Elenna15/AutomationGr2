@@ -21,6 +21,7 @@ public class RegisterTest extends BaseTest {
     String year = "1991";
     String month = "February";
     String day = "29";
+    String password = "Parola234";
 
 
     @Test
@@ -63,6 +64,14 @@ public class RegisterTest extends BaseTest {
 
         LOG.info("Select date of birth");
         registerPage.setDateOfBirth(year, month, day);
+
+        LOG.info("Type password");
+        registerPage.insertPassword(password);
+
+        LOG.info("Type password");
+        registerPage.insertConfirm(password);
+
+
 
         sleep(5000L);
 

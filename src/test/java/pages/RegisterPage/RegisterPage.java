@@ -41,6 +41,10 @@ public class RegisterPage extends BasePage {
     private By selectYear = By.id("yearbox");
     private By selectMonth = By.xpath("//select[@ng-model='monthbox']");
     private By selectDay = By.id("daybox");
+    private By passwordField = By.id("firstpassword");
+    private By confirmPassword = By.id("secondpassword");
+    private By submitButton = By.id("submitbtn");
+    private By refreshButton = By.id("Button1");
 
 
     public void insertFullName(String fName, String lName) {
@@ -122,6 +126,16 @@ public class RegisterPage extends BasePage {
         newMonth.selectByValue(month);
         Select newDay = new Select(driver.findElement(selectDay));
         newDay.selectByValue(day);
+    }
+
+    public void insertPassword(String password){
+        LOG.info("Insert password");
+        driver.findElement(passwordField).sendKeys(password);
+    }
+
+    public void insertConfirm(String password){
+        LOG.info("Insert password");
+        driver.findElement(confirmPassword).sendKeys(password);
     }
 
 }
